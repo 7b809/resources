@@ -1,7 +1,7 @@
 name: Protect PDF
 
-on:
-  workflow_dispatch:
+on: [push]
+
 
 jobs:
   protect_pdf:
