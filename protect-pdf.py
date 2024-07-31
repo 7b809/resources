@@ -6,7 +6,7 @@ import os
 # Retrieve Dropbox access token from environment variable
 ACCESS_TOKEN = os.getenv('DROPBOX_ACCESS_TOKEN')
 APP_FOLDER = '/Apps/getdata101'
-FILE_PATH = '/m2.pdf'
+FILE_PATH = '/getdata101/m2.pdf'
 PASSWORD = 'merged'
 
 # Initialize Dropbox client
