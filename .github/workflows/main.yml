@@ -1,0 +1,26 @@
+name: Protect PDF
+
+on:
+  workflow_dispatch:
+
+jobs:
+  protect_pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12' # or your preferred version
+
+      - name: Install dependencies
+        run: |
+          pip install dropbox PyPDF2
+
+      - name: Run protect-pdf.py
+        env:
+          DROPBOX_ACCESS_TOKEN: ${{ secrets.DROPBOX_ACCESS_TOKEN }}
+        run: |
+          python protect-pdf.py
